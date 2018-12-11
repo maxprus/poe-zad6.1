@@ -9,7 +9,7 @@ int main()
 	CPressureSensor PressureSensor(900, 1200);
 	CWindSensor WindSensor(0, 100);
 	CInsolationSensor InsolationSensor(0, 100);
-	CBase Base;					
+	CBase Base(5);					
 
 	Base.setSensor(&TemperatureSensor);		
 	Base.setSensor(&HumiditySensor);		

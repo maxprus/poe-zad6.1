@@ -1,9 +1,19 @@
 #include "base.hpp"
 #include <iostream>
 using namespace std;
+
+CBase::CBase(int maxSensors):
+maxSensors(maxSensors)
+{
+	Sensors = new CSensor*[maxSensors];
+}
+CBase::~CBase(){
+	delete Sensors;
+}
+
 void CBase::setSensor(CSensor *pSensor)
 {
-	if(numSensors < MAX_NUM_SENS)
+	if(numSensors < maxSensors)
 		Sensors[numSensors++] = pSensor;
 	else
 		cout << "Maximum number of sensors reached !" << endl;
